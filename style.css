@@ -33,7 +33,11 @@ nav {
 }
 
 .logo {
-  width: 150px;
+  width: 20%;
+}
+
+.logo img {
+  width: 100%;
 }
 
 .nav-links {
