@@ -402,7 +402,7 @@ footer {
 }
 
 footer .img {
-  width: 15%;
+  width: 30%;
 }
 
 footer .img img{
@@ -587,7 +587,7 @@ footer .copy {
   .contact-form-1 {
     position: absolute;
     top: 506%;
-    right: 35px;
+    right: 28px;
   }
 
   /* Footer Section Starts */
@@ -603,8 +603,8 @@ footer .copy {
   }
 
   footer .img img {
-    width: 50%;
-    margin-left: 10.5rem;
+    width: 100%;
+    margin-left: 0;
   }
 
   footer .nav-bar {
@@ -909,6 +909,7 @@ footer .copy {
     font-weight: 500;
   }
 
+  /* Footer Section Starts */
   footer {
     padding: 50px;
     display: flex;
@@ -921,8 +922,8 @@ footer .copy {
   }
 
   footer .img img {
-    width: 70%;
-    margin-left: 3rem;
+    width: 100%;
+    margin-left: 0;
   }
 
   footer .social-icon a {
