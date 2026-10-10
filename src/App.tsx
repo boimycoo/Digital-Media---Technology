@@ -84,9 +84,9 @@ const services = [
 ];
 
 const workImages = [
-  { src: "/asset/Image%202.png", alt: "A magnifying glass over a keyboard, representing careful digital strategy", label: "Search strategy" },
-  { src: "/asset/Image%203.png", alt: "Analytics dashboard on a laptop screen", label: "Digital insights" },
-  { src: "/asset/Image%204.png", alt: "Creative professional producing a video on a laptop", label: "Creative production" },
+  { src: asset("Image 2.png"), alt: "A magnifying glass over a keyboard, representing careful digital strategy", label: "Search strategy" },
+  { src: asset("Image 3.png"), alt: "Analytics dashboard on a laptop screen", label: "Digital insights" },
+  { src: asset("Image 4.png"), alt: "Creative professional producing a video on a laptop", label: "Creative production" },
 ];
 
 const navItems = [
@@ -101,6 +101,8 @@ const reveal = {
   visible: { opacity: 1, y: 0 },
 };
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}asset/${encodeURIComponent(path)}`;
+
 function Header({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (value: boolean | ((prev: boolean) => boolean)) => void }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const reduceMotion = useReducedMotion();
@@ -109,7 +111,7 @@ function Header({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (va
     <header className="sticky top-0 z-50 border-b border-forest/[0.07] bg-paper/90 backdrop-blur-xl dark:border-white/10 dark:bg-[#0d1715]/90">
       <div className="section-shell flex h-19 items-center justify-between gap-4">
         <a href="#home" aria-label="NaijaLumia home" className="shrink-0">
-          <img className="h-10 w-auto" src="/asset/NaijaLumia%201.svg" alt="NaijaLumia" />
+          <img className="h-10 w-auto" src={asset("NaijaLumia 1.svg")} alt="NaijaLumia" />
         </a>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-8 md:flex">
@@ -258,7 +260,7 @@ function Hero() {
           <div className="absolute right-[7%] top-[8%] aspect-square w-[78%] rounded-[42%_58%_52%_48%/46%_42%_58%_54%] bg-mint/70" />
           <div className="absolute bottom-[5%] left-[2%] h-[55%] w-[76%] rounded-[48%_52%_38%_62%/52%_44%_56%_48%] bg-forest" />
           <motion.img
-            src="/asset/Image%201.png"
+            src={asset("Image 1.png")}
             alt="Laptop displaying a modern website and digital tools"
             className="relative z-10 h-90 w-auto max-w-[92%] object-contain drop-shadow-[0_28px_30px_rgba(7,59,34,0.16)] sm:h-117.5"
             animate={reduceMotion ? undefined : { y: [0, -9, 0] }}
@@ -336,7 +338,7 @@ function About() {
             className="overflow-hidden rounded-2xl bg-paper shadow-sm"
           >
             <img
-              src="/asset/Image%203.png"
+              src={asset("Image 3.png")}
               alt="Business analytics shown on a laptop"
               loading="lazy"
               className="aspect-4/5 w-full object-cover transition-transform duration-700 hover:scale-[1.04]"
@@ -352,7 +354,7 @@ function About() {
               className="overflow-hidden rounded-2xl bg-paper shadow-sm dark:bg-[#141f1b]"
             >
               <img
-                src="/asset/Image%204.png"
+                src={asset("Image 4.png")}
                 alt="Creative professional editing a video project"
                 loading="lazy"
                 className="aspect-1.25/1 w-full object-cover transition-transform duration-700 hover:scale-[1.04]"
@@ -624,7 +626,7 @@ function Footer() {
       <div className="section-shell py-10">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
           <a href="#home" aria-label="NaijaLumia home">
-            <img src="/asset/NaijaLumia%20Light%201.svg" alt="NaijaLumia" className="h-10 w-auto" loading="lazy" />
+            <img src={asset("NaijaLumia Light 1.svg")} alt="NaijaLumia" className="h-10 w-auto" loading="lazy" />
           </a>
           <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/75">
             {navItems.map((item) => (
