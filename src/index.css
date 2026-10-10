@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Manrope", sans-serif;
+  --color-forest: #073b22;
+  --color-leaf: #167a3d;
+  --color-mint: #d9edc8;
+  --color-paper: #f8faf6;
+  --color-ink: #183126;
+  --color-muted: #68766d;
+}
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #183126;
+  background-color: #f8faf6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+html.dark {
+  background-color: #0d1513;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: #f8faf6;
+  color: #183126;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+html.dark body {
+  background: #0d1513;
+  color: #eafaf0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  color: #073b22;
+  background: #d9edc8;
+}
+
+.section-shell {
+  width: min(100% - 3rem, 1200px);
+  margin-inline: auto;
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #167a3d;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.section-kicker::before {
+  width: 1.5rem;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.soft-grid {
+  background-image: linear-gradient(rgba(7, 59, 34, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(7, 59, 34, 0.035) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to bottom, black, transparent 86%);
+}
+
+.form-field {
+  width: 100%;
+  border: 1px solid #d9e0d8;
+  border-radius: 0.65rem;
+  background: #fff;
+  padding: 0.85rem 1rem;
+  color: #183126;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.form-field::placeholder {
+  color: #8b968f;
+}
+
+.form-field:focus {
+  border-color: #167a3d;
+  box-shadow: 0 0 0 3px rgba(22, 122, 61, 0.1);
+}
+
+@media (max-width: 640px) {
+  .section-shell {
+    width: min(100% - 2rem, 1200px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
