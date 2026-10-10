@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://naijalumia.com/sitemap.xml
+Sitemap: https://boimycoo.github.io/Digital-Media---Technology/sitemap.xml
