@@ -83,6 +83,8 @@ const services = [
   },
 ];
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}asset/${encodeURIComponent(path)}`;
+
 const workImages = [
   { src: asset("Image 2.png"), alt: "A magnifying glass over a keyboard, representing careful digital strategy", label: "Search strategy" },
   { src: asset("Image 3.png"), alt: "Analytics dashboard on a laptop screen", label: "Digital insights" },
@@ -100,8 +102,6 @@ const reveal = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
 };
-
-const asset = (path: string) => `${import.meta.env.BASE_URL}asset/${encodeURIComponent(path)}`;
 
 function Header({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (value: boolean | ((prev: boolean) => boolean)) => void }) {
   const [menuOpen, setMenuOpen] = useState(false);
